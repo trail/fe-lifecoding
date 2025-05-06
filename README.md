@@ -20,4 +20,5 @@ Start frontend: `cd frontend; npm i; npm run dev`
 
 # Task:
 Implement autocomplete functionality.
-On input change fetch data from the backend. Render result as a list.
+On input change fetch data from the backend.
+Render result as a list under the input field.
