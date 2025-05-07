@@ -52,7 +52,7 @@ app.get('/api/search', (req, res) => {
   // Response delay
   let delay = 300;
   if (query == 'banan') {
-    delay = 3000;
+    delay = 6000;
   }
 
   setTimeout(() => {
