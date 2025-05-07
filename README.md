@@ -1,8 +1,6 @@
 # Preparation
 ### Backend
-Start backend
-`npm i; node server.js`
-server: localhost:3001
+server: https://fe-lifecoding-756bf63346ac.herokuapp.com
 
 **Api**
 
