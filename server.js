@@ -39,10 +39,25 @@ const DATA = [
   'raspberry',
   'strawberry',
   'watermelon',
+  'watermelon1',
+  'watermelon2',
+  'watermelon3',
+  'watermelon4',
+  'watermelon5',
+  'watermelon6',
+  'watermelon7',
+  'watermelon8',
+  'watermelon9',
+  'watermelon10',
+  'watermelon11',
+  'watermelon12',
+  'watermelon13',
 ];
 
 app.get('/api/search', (req, res) => {
   const query = (req.query.q || '').toLowerCase();
+  const page = parseInt(req.query.page) || 1;
+  const perPage = parseInt(req.query.perPage) || 10;
 
   // Server side error
   if (query == '500') {
@@ -61,7 +76,11 @@ app.get('/api/search', (req, res) => {
     }
 
     const results = DATA.filter((item) => item.includes(query));
-    res.json({ results });
+    const startIndex = (page - 1) * perPage;
+    const endIndex = startIndex + perPage;
+    const paginatedResults = results.slice(startIndex, endIndex);
+
+    res.json({ results: paginatedResults });
   }, delay);
 });
 
